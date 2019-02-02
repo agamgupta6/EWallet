@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title><img width="75%" src="/assets/PichinchaWallet.jpg" alt=""></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-grid>
+    <ion-row > 
+
+      <ion-col *ngFor="let feature of features">
+        <div class="example-ripple-container mat-elevation-z4">
+          <ion-grid>
+            <ion-row >
+              <ion-col col-3></ion-col>
+              <ion-col col-6>
+                <!-- <mat-icon class=" md-14">folder</mat-icon> -->
+                <a href="/tabs/tab1/home-wallet">{{feature.text}}</a>
+              </ion-col>
+              <ion-col col-3></ion-col>
+            </ion-row>
+          </ion-grid>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,28 @@
+.example-ripple-container {
+    cursor: pointer;
+    
+
+   background-color:#FBDA1E;
+  color: #1e2a5b;
+    height: 150px;
+    width: 150px;
+    
+    
+    border: 2px solid;
+  border-radius: 0px 0px 0px 35px;
+ font-size: 20px;
+ font-weight: 600;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+  
+    -webkit-user-drag: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  
+
+  .material-icons.md-14 {
+    font-size: 50px;
+  }

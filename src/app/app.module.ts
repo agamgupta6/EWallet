@@ -1,3 +1,5 @@
+import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
+import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -22,12 +24,13 @@ import { MatIconRegistry } from '@angular/material';
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
+    MatIconModule
   ],
   providers: [
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    MatIconRegistry
+    MatIconRegistry, BarcodeScanner
   ],
   bootstrap: [AppComponent]
 })

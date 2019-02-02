@@ -1,3 +1,5 @@
+import { HomeWalletComponent } from './home/home-wallet/home-wallet.component';
+import { HomePageModule } from './home/home.module';
 import { RegisterPageModule } from './../register/register.module';
 import { LoginPageModule } from './../login/login.module';
 import { IonicModule } from '@ionic/angular';
@@ -17,8 +19,9 @@ import {MatSelectModule} from '@angular/material/select';
     MatSelectModule,
     LoginPageModule,
     FormsModule,
-    RegisterPageModule
-  ],
-  declarations: [Tab1Page, ]
+    RegisterPageModule,
+    HomePageModule,
+    ],
+  declarations: [Tab1Page]
 })
 export class Tab1PageModule {}
