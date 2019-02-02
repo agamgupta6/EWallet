@@ -1,3 +1,4 @@
+import { RegisterPageModule } from './../register/register.module';
 import { LoginPageModule } from './../login/login.module';
 import { IonicModule } from '@ionic/angular';
 import { RouterModule } from '@angular/router';
@@ -15,7 +16,8 @@ import {MatSelectModule} from '@angular/material/select';
     RouterModule.forChild([{ path: '', component: Tab1Page }]),
     MatSelectModule,
     LoginPageModule,
-    FormsModule
+    FormsModule,
+    RegisterPageModule
   ],
   declarations: [Tab1Page, ]
 })

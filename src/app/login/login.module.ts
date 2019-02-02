@@ -12,6 +12,8 @@ import {MatListModule} from '@angular/material/list';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 
+
+import {MatChipsModule} from '@angular/material/chips'; 
 const routes: Routes = [
   {
     path: 'login',
@@ -28,7 +30,8 @@ const routes: Routes = [
     MatCardModule,
     MatListModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    MatChipsModule
   ],
   declarations: [LoginPage, LogoComponent]
 })
