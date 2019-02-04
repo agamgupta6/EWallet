@@ -5,20 +5,26 @@
 </ion-header>
 
 <ion-content padding>
+  {{firstFormGroup}}
   <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
     {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
   </button>
   <mat-vertical-stepper [linear]="isLinear" #stepper>
-      <ng-template matStepperIcon="edit">
-          <mat-icon>check</mat-icon>
-  </ng-template>
-    <mat-step [stepControl]="firstFormGroup" >
-        <mat-icon>check</mat-icon>
+    
+    <mat-step [stepControl]="firstFormGroup">
       <form [formGroup]="firstFormGroup">
-        <ng-template matStepLabel>Fill out your name</ng-template>
+        <ng-template matStepLabel>User Details</ng-template>
         <mat-form-field>
-          <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+          <input matInput placeholder="User Name" formControlName="login" required>
         </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Password" formControlName="password" required>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Email" formControlName="email"  required>
+        </mat-form-field>
+        
+
         <div>
           <button mat-button matStepperNext>Next</button>
         </div>
@@ -26,10 +32,21 @@
     </mat-step>
     <mat-step [stepControl]="secondFormGroup">
       <form [formGroup]="secondFormGroup">
-        <ng-template matStepLabel>Fill out your address</ng-template>
+        <ng-template matStepLabel>Identification</ng-template>
         <mat-form-field>
-          <input matInput placeholder="Address" formControlName="secondCtrl" required>
+          <input matInput placeholder="Mobile" formControlName="mobile" required>
         </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Cedula" formControlName="cedula" required>
+        </mat-form-field>
+       
+          <input type="file" name="cedulaImage" (change)="selectFile($event)" formControlName="cedulaImage" >
+        
+          <input type="file" name="faceImage" (change)="selectFile($event)" formControlName="faceImage">
+          
+          <input type="file" name="addressImage" (change)="selectFile($event)" formControlName="addressImage">
+        
+          <input type="file" name="signatureImage" (change)="selectFile($event)" formControlName="signatureImage">
         <div>
           <button mat-button matStepperPrevious>Back</button>
           <button mat-button matStepperNext>Next</button>
@@ -42,14 +59,11 @@
       <div>
         <button mat-button matStepperPrevious>Back</button>
         <button mat-button (click)="stepper.reset()">Reset</button>
+        <button mat-button (click)="addUser()">Submit</button>
       </div>
     </mat-step>
-    <mat-step>
-      <ng-template matStepLabel matStepperIcon="chat">Done</ng-template>
-      <mat-icon>forum</mat-icon>
-      
-    </mat-step>
+     
   </mat-vertical-stepper>
-  
-  
+  <br>
+ 
 </ion-content>

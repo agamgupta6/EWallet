@@ -1,3 +1,5 @@
+import { FcmService } from './../fcm.service';
+import { FCM } from '@ionic-native/fcm/ngx';
 import { Component } from '@angular/core';
 
 export interface Food {
@@ -16,4 +18,12 @@ export class Tab1Page {
     {value: 'pizza-1', viewValue: 'Pizza'},
     {value: 'tacos-2', viewValue: 'Tacos'}
   ];
+  tokenfcm: string;
+
+
+constructor(private fcm: FCM) {
+
+}
+get() {
+}
 }

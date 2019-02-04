@@ -1,3 +1,4 @@
+import { FcmService } from './fcm.service';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
@@ -14,6 +15,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { MatIconRegistry } from '@angular/material';
+import { FCM } from '@ionic-native/fcm/ngx';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -30,7 +32,7 @@ import { MatIconRegistry } from '@angular/material';
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    MatIconRegistry, BarcodeScanner
+    MatIconRegistry, BarcodeScanner, FCM, FcmService
   ],
   bootstrap: [AppComponent]
 })
