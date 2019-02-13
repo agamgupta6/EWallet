@@ -75,4 +75,33 @@
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
   $fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
+
+  
 }
+
+.someclass {
+  background: url(/assets/PichinchaWallet.jpg) center;
+  background-repeat: no-repeat;
+  // background-size: 100%;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  padding: 4px;
+ 
+}
+
+.primarybutton{
+--background: #ffdd00;
+  color: #0F265C;
+  font-family: Arial, Helvetica, sans-serif;
+  
+}
+
+.secondarybutton{
+  --background: white;
+    color: #0F265C;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  
+  

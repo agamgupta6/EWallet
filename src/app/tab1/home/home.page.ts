@@ -1,3 +1,5 @@
+import { AccountService } from './../../account.service';
+import { WalletService } from './../../wallet.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -9,6 +11,7 @@ export class HomePage implements OnInit {
   centered = false;
   disabled = false;
   unbounded = false;
+  account: any;
 
   radius: number;
   color: string;
@@ -22,12 +25,17 @@ export class HomePage implements OnInit {
     text: 'Transfer'
   }, {
     text: 'Transactions'
-  },];
-  constructor() {
+  }, ];
+  constructor(private walletService: WalletService,
+    private accountService: AccountService) {
   }
 
   ngOnInit() {
-    this.color = 'yellow';
+    this.accountService.identity().then(res => {
+      this.account = res;
+      alert(JSON.stringify(this.account));
+    });
+
   }
 
 }

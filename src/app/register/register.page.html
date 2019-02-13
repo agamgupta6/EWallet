@@ -1,24 +1,23 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>register</ion-title>
+    <ion-title class="someclass"> 
+      &nbsp;
+     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-  {{firstFormGroup}}
-  <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
-    {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
-  </button>
-  <mat-vertical-stepper [linear]="isLinear" #stepper>
+<ion-content padding class="pichinchglobal" >
+  
+  <mat-vertical-stepper [linear]="false" #stepper class="yellow-theme" >
     
-    <mat-step [stepControl]="firstFormGroup">
+    <mat-step [stepControl]="firstFormGroup" >
       <form [formGroup]="firstFormGroup">
         <ng-template matStepLabel>User Details</ng-template>
         <mat-form-field>
           <input matInput placeholder="User Name" formControlName="login" required>
         </mat-form-field>
         <mat-form-field>
-          <input matInput placeholder="Password" formControlName="password" required>
+          <input type="password" matInput placeholder="Password" formControlName="password" required>
         </mat-form-field>
         <mat-form-field>
           <input matInput placeholder="Email" formControlName="email"  required>
@@ -26,40 +25,109 @@
         
 
         <div>
-          <button mat-button matStepperNext>Next</button>
+            <ion-button  class="primarybutton" (click)="addUser(stepper)">Create User</ion-button >
+          
         </div>
       </form>
     </mat-step>
-    <mat-step [stepControl]="secondFormGroup">
-      <form [formGroup]="secondFormGroup">
-        <ng-template matStepLabel>Identification</ng-template>
-        <mat-form-field>
-          <input matInput placeholder="Mobile" formControlName="mobile" required>
-        </mat-form-field>
-        <mat-form-field>
-          <input matInput placeholder="Cedula" formControlName="cedula" required>
-        </mat-form-field>
-       
-          <input type="file" name="cedulaImage" (change)="selectFile($event)" formControlName="cedulaImage" >
-        
-          <input type="file" name="faceImage" (change)="selectFile($event)" formControlName="faceImage">
+    
+    <mat-step>
+        <form [formGroup]="secondFormGroup">
+            <ng-template matStepLabel>Identification</ng-template>
+            <mat-form-field>
+              <input matInput placeholder="Mobile" formControlName="mobile" required>
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="Cedula" formControlName="cedula" required>
+            </mat-form-field>
+        <mat-accordion>
+            <mat-expansion-panel>
+              <mat-expansion-panel-header [ngStyle]="{'background-color': imageSuccess.cedulaImage ? 'green' : null }">
+                <mat-panel-title>
+                  Cedula
+                </mat-panel-title>
+                <mat-panel-description>
+                  Click to upload 
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+              <br>
+              <input type="file" name="cedulaImage" (change)="selectFile($event)" formControlName="cedulaImage" >
+              <br>
+              <br>
+              <mat-divider></mat-divider>
+              <br>   
+              <button mat-button mat-raised-button color="primary" (click)="uploadFile(stepper,'cedulaImage')">Upload</button>
+              
+            </mat-expansion-panel>
+            <mat-expansion-panel>
+                <mat-expansion-panel-header [ngStyle]="{'background-color': imageSuccess.faceImage ? 'green' : null }">
+                  <mat-panel-title>
+                    Photo
+                  </mat-panel-title>
+                  <mat-panel-description>
+                    Click to upload
+                  </mat-panel-description>
+                </mat-expansion-panel-header>
+                <br>
+                <input type="file" name="faceImage" (change)="selectFile($event)" formControlName="faceImage" >
+                <br>
+                <br>
+                <mat-divider></mat-divider>
+                <br>   
+                <button mat-button mat-raised-button color="primary" (click)="uploadFile(stepper,'faceImage')">Upload</button>
+                
+              </mat-expansion-panel>
+              <mat-expansion-panel>
+                  <mat-expansion-panel-header [ngStyle]="{'background-color': imageSuccess.addressImage ? 'green' : null }">
+                    <mat-panel-title>
+                      Address
+                    </mat-panel-title>
+                    <mat-panel-description>
+                      Click to upload
+                    </mat-panel-description>
+                  </mat-expansion-panel-header>
+                  <br>
+                  <input type="file" name="addressImage" (change)="selectFile($event)" formControlName="addressImage" >
+                  <br>
+                  <br>
+                  <mat-divider></mat-divider>
+                  <br>   
+                  <button mat-button mat-raised-button color="primary" (click)="uploadFile(stepper,'addressImage')">Upload</button>
+                  
+                </mat-expansion-panel>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header [ngStyle]="{'background-color': imageSuccess.signatureImage ? 'green' : null }">
+                      <mat-panel-title>
+                        Signature
+                      </mat-panel-title>
+                      <mat-panel-description>
+                        Click to upload
+                      </mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <br>
+                    <input type="file" name="signatureImage" (change)="selectFile($event)" formControlName="signatureImage" >
+                    <br>
+                    <br>
+                    <mat-divider></mat-divider>
+                    <br>   
+                    <button mat-button mat-raised-button color="primary" (click)="uploadFile(stepper,'signatureImage')">Upload</button>
+                    
+                  </mat-expansion-panel>
+                  <br><br>
+                  <button mat-button mat-raised-button matStepperNext color="primary">Next</button>
+          </mat-accordion>
           
-          <input type="file" name="addressImage" (change)="selectFile($event)" formControlName="addressImage">
-        
-          <input type="file" name="signatureImage" (change)="selectFile($event)" formControlName="signatureImage">
-        <div>
-          <button mat-button matStepperPrevious>Back</button>
-          <button mat-button matStepperNext>Next</button>
-        </div>
-      </form>
+          </form>
     </mat-step>
     <mat-step>
       <ng-template matStepLabel>Done</ng-template>
-      You are now done.
+      <strong>You are now done. Click finish to get your EWallet.</strong>
+      <br><br>
       <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button (click)="stepper.reset()">Reset</button>
-        <button mat-button (click)="addUser()">Submit</button>
+        <button mat-button mat-raised-button color="primary"  
+        (click)="stepper.reset()" style="margin-right: 8px;">Reset</button>
+        <button mat-button mat-raised-button color="primary"  
+        (click)="createWallet()">Finish</button>
       </div>
     </mat-step>
      

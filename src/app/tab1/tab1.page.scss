@@ -1,4 +1,13 @@
 .welcome-card ion-img {
   max-height: 35vh;
   overflow: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.example-card {
+  width: 400px;
+  margin: 30% auto;
+}
+.mat-card-title{
+  font-size: 18px;
 }

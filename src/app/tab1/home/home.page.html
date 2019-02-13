@@ -4,9 +4,9 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding class="yellow-theme">
 
-  <ion-grid>
+  <!-- <ion-grid>
     <ion-row > 
 
       <ion-col *ngFor="let feature of features">
@@ -15,7 +15,7 @@
             <ion-row >
               <ion-col col-3></ion-col>
               <ion-col col-6>
-                <!-- <mat-icon class=" md-14">folder</mat-icon> -->
+               
                 <a href="/tabs/tab1/home-wallet">{{feature.text}}</a>
               </ion-col>
               <ion-col col-3></ion-col>
@@ -24,5 +24,85 @@
         </div>
       </ion-col>
     </ion-row>
-  </ion-grid>
+  </ion-grid> -->
+
+
+  <!-- <h3>Fab Buttons</h3>
+  <div class="example-button-row">
+   
+    <button mat-fab>
+      <mat-icon color="primary" aria-label="Example icon-button with a heart icon">favorite</mat-icon>
+    </button>
+    <a mat-fab routerLink=".">Link</a>
+  </div> -->
+  
+
+
+
+<!-- <h3>Raised Buttons</h3>
+<div class="example-button-row">
+  
+  <button *ngFor="let feature of features" 
+  mat-raised-button color="primary" 
+  style="width: 150px; height: 150px; margin: 15px; 
+  color: #0F265C; font-family: Arial, Helvetica, sans-serif"
+  >
+    <strong>Primary </strong>
+</button> 
+  
+  
+</div>-->
+
+<mat-card class="example-card" style="background-image: url('assets/card.jpg');
+background-size: cover;">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>&nbsp;</mat-card-title>
+    <mat-card-subtitle>&nbsp;</mat-card-subtitle>
+  </mat-card-header>
+  
+  <mat-card-content >
+    <br><br><br>
+      <strong>12312321-13123-12312-123213 </strong><mat-chip style="background-color:#0F265C;
+      color: white" selected> <strong>$100.00</strong> <br></mat-chip>
+      <br><br>
+      <mat-chip-list>
+       
+        
+      </mat-chip-list>
+      
+  </mat-card-content>
+  <mat-card-actions >
+    <button mat-button mat-raised-button color="primary">Add Money</button>
+    <button mat-button mat-raised-button color="warn">Transactions</button>
+  </mat-card-actions>
+</mat-card>
+<br> <strong>Last Transactions</strong> <br><br>
+
+<mat-accordion>
+  <mat-expansion-panel >
+    <mat-expansion-panel-header>
+      <mat-panel-title style="color: #0F265C">
+        <strong>$20.06</strong>
+      </mat-panel-title>
+      <mat-panel-description  style="color: #0F265C">
+        <strong>SuperMaxi</strong>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <img src="/assets/factura.jpg" alt="">
+  </mat-expansion-panel>
+</mat-accordion>
+<br>
+<mat-accordion>
+  <mat-expansion-panel >
+    <mat-expansion-panel-header>
+      <mat-panel-title style="color: #0F265C">
+        <strong>$09.75</strong>
+      </mat-panel-title>
+      <mat-panel-description  style="color: #0F265C">
+        <strong>Multicines</strong>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+  </mat-expansion-panel>
+</mat-accordion>
 </ion-content>

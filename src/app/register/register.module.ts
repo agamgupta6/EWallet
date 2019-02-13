@@ -1,3 +1,4 @@
+import { MatTabsModule } from '@angular/material/tabs';
 import { HttpClientModule } from '@angular/common/http';
 import { MatSelectModule } from '@angular/material/select';
 import { NgModule } from '@angular/core';
@@ -15,7 +16,10 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatButtonModule} from '@angular/material/button';
 
 import {MatStepperModule} from '@angular/material/stepper';
-import {MatInputModule} from '@angular/material';
+import {MatInputModule, MatExpansionModule} from '@angular/material';
+
+
+import {MatDividerModule} from '@angular/material/divider'; 
 const routes: Routes = [
   {
     path: 'register',
@@ -36,7 +40,11 @@ const routes: Routes = [
     MatSelectModule,
     MatInputModule,
     MatIconModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTabsModule,
+    MatExpansionModule,
+    MatDividerModule
+
   ],
   declarations: [RegisterPage]
 })

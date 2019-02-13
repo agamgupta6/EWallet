@@ -1,30 +1,81 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>
-      Tab One <img src="/assets/bpichincha_imagotipo.svg" alt="">
+    <ion-title class="someclass"> 
+     &nbsp;
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-    <ion-card class="welcome-card">
-      <ion-img src="/assets/shapes.svg"></ion-img>
-      <ion-card-header>
-        <ion-card-subtitle>Get Started</ion-card-subtitle>
-        <ion-card-title>Welcome to Ionic!  {{tokenfcm}} </ion-card-title>
-        <button (click)="get()">get()</button>
-      </ion-card-header>
-      <ion-card-content>
-        <p>Now that your app has been created, you'll want to start building out features and components. Check out some of the resources below for next steps.</p>
-      </ion-card-content>
-    </ion-card>
-    <mat-form-field>
-      <mat-select placeholder="Favorite food">
-        <mat-option *ngFor="let food of foods" [value]="food.value">
-          {{food.viewValue}}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
-    <br>
-    <ion-button href="/tabs/tab1/login">Hellok</ion-button>
-</ion-content>
+<ion-content class="pichincha yellow-theme" style="vertical-align: middle;" >
+    <!-- <div [ngSwitch]="isAuthenticated()">
+        <div class="alert alert-success" *ngSwitchCase="true">
+            <span id="home-logged-message" *ngIf="account"
+              > You are logged in as user "{{account.login}}". </span>
+        </div>
+        <div class="alert alert-warning" *ngSwitchCase="false">
+            <span>If you want to </span>
+            <a class="alert-link">sign in</a><span>, you can try the default accounts:<br/>- Administrator (login="admin" and password="admin") <br/>- User (login="user" and password="user").</span>
+        </div>
+    </div> -->
+    <ion-grid>
+       
+      <ion-row>
+        <ion-col>
+          <mat-card class="example-card">
+
+            <mat-card-header>
+         
+              <mat-card-title>Login</mat-card-title>
+         
+            </mat-card-header>
+         
+            <mat-card-content>
+         
+              <form class="example-form" (ngSubmit)="login()">
+         
+                <table class="example-full-width" cellspacing="0">
+         
+                  <tr>
+         
+                    <td>
+         
+                      <mat-form-field class="example-full-width">
+         
+                      <input matInput placeholder="Username" [(ngModel)]="username" name="username" required>
+         
+                      </mat-form-field>
+         
+                    </td>
+         
+                  </tr>
+         
+                  <tr>
+         
+                  <td><mat-form-field class="example-full-width">
+         
+                    <input matInput placeholder="Password" [(ngModel)]="password" type="password" name="password" required>
+         
+                  </mat-form-field></td>
+         
+                </tr></table>
+         
+              </form>
+         
+              <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
+         
+            </mat-card-content>
+         
+            <mat-card-actions>
+         
+              <ion-button  class="primarybutton" (click)="login()" >Login</ion-button >
+                
+                <ion-button class="secondarybutton" item-end href="/tabs/tab1/register">Register</ion-button>
+            </mat-card-actions>
+         
+          </mat-card>   
+               
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    
+  </ion-content>
